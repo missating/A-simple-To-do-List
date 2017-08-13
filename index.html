@@ -3,107 +3,58 @@
 <head>
 	<title> To Do List </title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	
 </head>
 
 
 <body>
-				<!-- Add new task -->
-		<div class="container">
-
-		<h2> Add New Task </h2>
-				<input type="text" id="newTask">
-				<input type="button" onclick="add()" value="Add">
+        <!-- Add new task -->
+    
+        <div class="container">
+            
+            <h2> Add New Task </h2>
+            
+		<input type="text" id="newTask">
+		<input type="button" onclick="add()" value="Add">
 
 		<h2> To Do List </h2>
+            
+            <!-- A list to contain the placeholder for added task  -->
+            
+		<ul>
+			<li><input type="checkbox" value="buy socks">buy socks</input></li>
+		</ul>
+    
+    <!-- An empty list to contain the add new task  -->
+		<ul id="list">
 
-				<!-- A list to contain the placeholder for added task  -->
-					<ul>
-						<li><input type="checkbox" value="buy socks">buy socks</input></li>
-					</ul>
 
-				<!-- An empty list to contain the add new task  -->
-					<ul id="list">
+		</ul>
+    
+    <!-- Remove the new task from list once its been completed -->
+    
+		<input type="button" onclick="remove()" id="top" value="Remove">
 
-					
-					</ul>
+		<h2> Completed Task </h2>
+    
+     <!-- A list to contain the placeholder for removed task  -->
+		<ul>
+			<li><input type="checkbox" checked>buy socks</li>
+		</ul>
+    
+    <!-- An empty list to contain the completed task when removed -->
+   
+		<ul id="complete">
 
-				<!-- Remove the new task from list once its been completed -->
-
-				<input type="button" id="top" onclick="remove()" value="remove">
-
-				
-				
-
-					<h2> Completed Task </h2>
-
-					<!-- A list to contain the placeholder for removed task  -->
-					<ul>
-						<li><input type="checkbox" checked>buy socks</li>
-					</ul>
-
-					<!-- An empty list to contain the completed task when removed -->
-						<ul id="complete">
-						
-
-						</ul>
-				</div>
-
+		</ul>
+    
+    </div>
 
 
 <!-- Javascript to activite the add and remove button onclick function -->
-
-
-<script type="text/javascript">
-
-	// activating the add function
-
-function add() {
-
-	// set a variable to get the input from the new task
-   		var text = document.getElementById("newTask").value;
-	           if (text=='') {
-	             	return false;
-	           }
-
-	        // add the value gotten from the new task input to the empty ul list
-	           document.getElementById("list").innerHTML += '<li class="animated bounceInDown"><input type="checkbox" value="'+text+'">'+text+'</input></li>';
-
-	           // set the new task value to empty
-	           document.getElementById("newTask").value = '';
-	          
-}
-
-// activating function remove
-
-function remove() {
-
-	// set a variable to get the input added to the empty ul list
-	// console.log(list); to check the input added to the ul list
-	 var list = document.getElementById("list").childNodes;
-
-	// loop through the list input
-     for (var i = 1; i < list.length; i++) {
-
-     	// all list input that must be removed should be checked first
-     	if(list[i].childNodes[0].checked){
-     	  // console.log(this);
-     	   
-     	   //add the input from list when checked and removed clicked to the completed list
-            document.getElementById("complete").innerHTML += '<li class="animated fadeInDown"><input type="checkbox" checked>'+list[i].childNodes[0].value+'</li>';
-
-            //move the list item from list to completed
-			list[i].parentElement.removeChild(list[i]);
-     	}
-     }
-	
-
-}
-	
-</script>
-
-
-
+<script src="main.js"></script>
 
 </body>
 </html>

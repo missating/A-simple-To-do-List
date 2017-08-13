@@ -1,29 +1,39 @@
+*{
+     font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
 body  {
-	background: #fff;
+	background: whitesmoke;
 	color: #333;
-	font-family: sans-serif;
+	
 }
 
 .container {
 	display: block;
 	width: 400px;
-	margin: 100px auto 0;
+    margin: 0 auto;
 }
 
 ul {
 	margin: 0;
 	padding: 0;
+  
 }
 
 li {
 	list-style: none;
+    color: #747704;
 }
 
 #complete li {
 	text-decoration: line-through;
 	}
 
+
 #top {
 	margin-top: 30px;
 }
+
+
 
